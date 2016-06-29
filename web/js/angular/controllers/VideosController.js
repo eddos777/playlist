@@ -1,18 +1,16 @@
 'use strict';
 
-main.controller('VideosController', function ($scope, $routeParams, appService)
-{
-    var video; 
+main.controller('VideosController', function ($scope, $routeParams, appService) {
+    $scope.video = {};
+
     $scope.save = function () {
         if ($scope.video) {
-            appService.postData('index.php/site/create', $scope.video).then(function (data)
-            {
-                alert("ok");
-                    $scope.alert = { showAlert:true, msg: angular.fromJson(data).mesg, alertClass: 'success' };
+            appService.postData('/create', $scope.video).then(function (data) {
+                    alert("ok");
                 },
                 function (error) {
                     alert("Can't download this video");
                 });
-        } 
+        }
     };
 });

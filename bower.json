@@ -1,6 +1,6 @@
 {
   "name": "playlist",
-  "homepage": "https://github.com/eddos777/cesar",
+  "homepage": "https://github.com/eddos777/playlist",
   "authors": [
     "edik <edik@example.ru>"
   ],
@@ -13,7 +13,8 @@
     "bower_components",
     "vendor/bower",
     "test",
-    "tests"
+    "tests",
+    "web/bower"
   ],
   "dependencies": {
     "angular": "1.5.7"

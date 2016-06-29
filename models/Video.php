@@ -15,6 +15,8 @@ use yii\web\UploadedFile;
  */
 class Video extends \yii\db\ActiveRecord
 {
+    const UPLOAD_DIR = 'web/videos';
+    
     public $video;
 
     public $filename;
@@ -55,8 +57,6 @@ class Video extends \yii\db\ActiveRecord
         if ($this->isNewRecord){
             //generate & upload
             $this->string = substr(uniqid('domain'),0,12);
-            var_dump(UploadedFile::getInstance($this,"url"));
-            exit;
             $this->video = UploadedFile::getInstance($this,"url");
             $this->filename = '/web/videos/' . $this->string . '.' . $this->video->extension;
             $this->video->saveAs($this->filename);

@@ -5,8 +5,6 @@ main.factory('appService', function ($http, $q) {
         return {
             postData: function (route, data) {
                 var defer = $q.defer();
-                /*TODO delete console.log*/
-                console.log(data);
                 $http.post(main.baseUrl + route, data,
                     {
                         'headers': {
